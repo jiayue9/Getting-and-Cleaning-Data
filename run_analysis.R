@@ -33,15 +33,12 @@ activityWithName <- factor(allActivity[,1], levels = activity[, 1], labels = act
 
 names(selectedData) <- featureName
 activityWithName <- data.frame(activity = activityWithName)
-head(selectedData)
-
 
 trainSubject <- read.table("UCI HAR Dataset/train/subject_train.txt")
 testSubject <- read.table("UCI HAR Dataset/test/subject_test.txt")
 
 allSubject <- rbind.data.frame(trainSubject, testSubject)
 names(allSubject) <- "subject"
-
 
 allDataWithLabels <- cbind.data.frame(allSubject, activityWithName, selectedData)
 
